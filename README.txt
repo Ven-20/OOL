@@ -11,17 +11,17 @@ Filo
 | |_| | | |_| | | |___
 \_____/ \_____/ |_____|
 
-IINTRODUZIONE
+INTRODUZIONE
 
-OOL ・un'estensione "object oriented" di Common Lisp con eredit・
+OOL 繝ｻun'estensione "object oriented" di Common Lisp con eredit繝ｻ
 multipla.
-Questa estensione permetter・a Common Lisp di creare classi e
+Questa estensione permetter繝ｻa Common Lisp di creare classi e
 sottoclassi, aventi dentro campi e metodi, e di creare istanze di
 queste classi, con a loro volta i loro campi, ereditati dalla classe.
-L'implementazione di ci・・svolto in modo particolare, mostrando solo
+L'implementazione di ci繝ｻ繝ｻsvolto in modo particolare, mostrando solo
 i campi e metodi "nuovi" delle classi ed istanze, quindi, a meno che
 non si crei un nuovo campo e/o metodo, o non si modifichi una
-ereditata, il sistema non mostrer・tutti i campi e metodi ereditati,
+ereditata, il sistema non mostrer繝ｻtutti i campi e metodi ereditati,
 anche se comunque presenti.
 
 
@@ -45,18 +45,18 @@ Sintassi:
 	field-type  ::= T | <type>
 
 
-<class-name> 	    ・un simbolo, definisce il nome della classe;
-<parents>	    ・una lista (possibilmente vuota) di simboli,
+<class-name> 	    繝ｻun simbolo, definisce il nome della classe;
+<parents>	    繝ｻuna lista (possibilmente vuota) di simboli,
 		    sono i nomi di altre classi;
-<part> 	       	    ・un insieme di campi, o un insieme di
+<part> 	       	    繝ｻun insieme di campi, o un insieme di
 		    definizionidi metodo. 
-<field-name>	    ・un simbolo;
-<value>		    ・un'espressione costante autovalutante qualunque;
-<type>		    ・il nome di una classe gi・definita con
+<field-name>	    繝ｻun simbolo;
+<value>		    繝ｻun'espressione costante autovalutante qualunque;
+<type>		    繝ｻil nome di una classe gi繝ｻdefinita con
 		    def-class, un tipo numerico Common Lisp, o T;
-<method-name>	    ・un simbolo;
-<arglist>	    ・una lista di parametri standard Common Lisp;
-<form>		    ・una qualunque espressione Common Lisp;
+<method-name>	    繝ｻun simbolo;
+<arglist>	    繝ｻuna lista di parametri standard Common Lisp;
+<form>		    繝ｻuna qualunque espressione Common Lisp;
 
 
 - MAKE
@@ -67,34 +67,34 @@ Ritorna la nuova istanza di <class-name>
 Sintassi:
 	'(' make <class-name> [<field-name> <value>]* ')'
 
-<class-name>	    ・un simbolo, rappresenta il nome della classe di
+<class-name>	    繝ｻun simbolo, rappresenta il nome della classe di
 		    appartenenza;
-<field-name>	    ・un simbolo, rappresenta il nome di un campo;
-<value>		    ・un qualunque valore.
+<field-name>	    繝ｻun simbolo, rappresenta il nome di un campo;
+<value>		    繝ｻun qualunque valore.
 
 
 - IS-CLASS
 
-Restituisce T se <class-name> ・il nome di una classe.
+Restituisce T se <class-name> 繝ｻil nome di una classe.
 
 Sintassi:
 	'(' is-class <class-name> ')'
 
-<class-name>	    ・un simbolo, rappresenta il nome di una classe.
+<class-name>	    繝ｻun simbolo, rappresenta il nome di una classe.
 
 
 - IS-INSTANCE
 
-Restituisce T se <value> ・l'istanza di una classe.
-Se <class-name> ・T, basta che <value> sia un'istanza qualunque;
+Restituisce T se <value> 繝ｻl'istanza di una classe.
+Se <class-name> 繝ｻT, basta che <value> sia un'istanza qualunque;
 altrimenti, deve essere un'istanza di una classe avente <class-name>
 come superclasse.
 
 Sintassi:
 	'(' is-instance <value> [<class-name>] ')'
 
-<class-name>	    ・un simbolo, rappresenta il nome di una classe;
-<value>		    ・un qualunque valore.
+<class-name>	    繝ｻun simbolo, rappresenta il nome di una classe;
+<value>		    繝ｻun qualunque valore.
 
 
 - FIELD
@@ -105,8 +105,8 @@ ritornato.
 Sintassi:
 	'(' field <istance> <field-name> ')'
 
-<instance>  	   ・un'istanza di una classe;
-<field-name>	   ・un simbolo, rappresenta un campo.
+<instance>  	   繝ｻun'istanza di una classe;
+<field-name>	   繝ｻun simbolo, rappresenta un campo.
 
 
 - FIELD*
@@ -117,8 +117,8 @@ se lo trova, viene ritornato.
 Sintassi:
 	'(' field* <instance> <field-name>+ ')'
 
-<instance>  	   ・un'istanza di una classe;
-<field-name>+	   ・una lista non vuota di simboli.
+<instance>  	   繝ｻun'istanza di una classe;
+<field-name>+	   繝ｻuna lista non vuota di simboli.
 
 
 - CLASS-SPEC
@@ -128,7 +128,7 @@ Ritorna la struttura di una classe.
 Sintassi:
 	'(' class-spec <class-name> ')'
 
-<class-name>	   ・il nome di una classe.
+<class-name>	   繝ｻil nome di una classe.
 
 
 
@@ -149,8 +149,8 @@ Chiamata da (def-class).
 Sintassi:
 	'(' insert-part <parents> <part> ')'
 
-<parents>   	   ・una lista di classi;
-<part>		   ・un insieme di campi e/o un insieme di metodi.
+<parents>   	   繝ｻuna lista di classi;
+<part>		   繝ｻun insieme di campi e/o un insieme di metodi.
 
 
 - INSERT-FIELDS
@@ -163,8 +163,8 @@ Chiamata da (insert-part).
 Sintassi:
 	'(' insert-fields <parents> <fields> ')'
 
-<parents>   	   ・una lista di classi;
-<fields>	   ・una lista di campi.
+<parents>   	   繝ｻuna lista di classi;
+<fields>	   繝ｻuna lista di campi.
 
 
 - CONTROL-FIELD
@@ -177,8 +177,8 @@ Chiamata da (insert-fields).
 
 Sintassi: '(' control-field <parents> <field> ')'
 
-<parents>     	   ・una lista di classi;
-<field>		   ・un campo.
+<parents>     	   繝ｻuna lista di classi;
+<field>		   繝ｻun campo.
 
 
 - INSERT-METHODS
@@ -190,7 +190,7 @@ Chiamata da (insert-part).
 Sintassi:
 	'(' insert-methods <methods> ')'
 
-<methods>   	   ・una lista di metodi.
+<methods>   	   繝ｻuna lista di metodi.
 
 
 - PROCESS-METHOD
@@ -202,8 +202,8 @@ Chiamata da (insert-methods).
 Sintassi:
 	'(' process-method <method-name> <method-spec> ')'
 
-<method-name>      ・un simbolo, rappresenta il nome di un metodo;
-<method-spec>	   ・una Sexp formato dagli <arglist> e <form> del
+<method-name>      繝ｻun simbolo, rappresenta il nome di un metodo;
+<method-spec>	   繝ｻuna Sexp formato dagli <arglist> e <form> del
 		   metodo. 
 
 
@@ -216,7 +216,7 @@ Chiamata da (process-method).
 Sintassi:
 	'(' rewrite-method-code <method-spec> ')'
 
-<method-spec>	   ・una Sexp formato dai <arglist> e <form> di un
+<method-spec>	   繝ｻuna Sexp formato dai <arglist> e <form> di un
 		   metodo.
 
 
@@ -229,8 +229,8 @@ Chiamata da (insert-part) e (make).
 Sintassi:
 	'(' duplicate-parts-check <parts-list> <parts-to-check> ')'
 
-<parts-list>	   ・una lista o di campi, o di metodi;
-<parts-to-check>   ・una lista o di campi, o di metodi.
+<parts-list>	   繝ｻuna lista o di campi, o di metodi;
+<parts-to-check>   繝ｻuna lista o di campi, o di metodi.
 
 
 - COUNT-PART
@@ -242,8 +242,8 @@ Chiamata da (duplicate-parts-check).
 Sintassi:
 	'(' count-part <part-list> part ')'
 
-<part-list> 	   ・una lista o di campi, o di metodi;
-<part>		   ・o un campo, o un metodo.
+<part-list> 	   繝ｻuna lista o di campi, o di metodi;
+<part>		   繝ｻo un campo, o un metodo.
 
 
 - GROUP-FIELDS
@@ -256,7 +256,7 @@ Chiamata da (make).
 Sintassi:
 	'(' groud-fields <fields> ')'
 
-<fields>    	   ・una lista "piatta" contenenti il nome di un campo
+<fields>    	   繝ｻuna lista "piatta" contenenti il nome di un campo
 		   ed il suo valore, in sequenza alterna.
 
 
@@ -270,8 +270,8 @@ Chiamata da (make).
 Sintassi:
 	'(' make-fields <class-name> <fields> ')'
 
-<class-name>	   ・una classe;
-<fields>	   ・una lista "piatta" contenenti il nome di un campo
+<class-name>	   繝ｻuna classe;
+<fields>	   繝ｻuna lista "piatta" contenenti il nome di un campo
 		   ed il suo valore, in sequenza alterna.
 
 
@@ -285,8 +285,8 @@ della classe, o un subtype del suo tipo.
 Sintassi:
 	'(' make-field-check <class-name> <field> ')'
 
-<class-name>	   ・una classe;
-<field>		   ・un campo in forma nome valore.
+<class-name>	   繝ｻuna classe;
+<field>		   繝ｻun campo in forma nome valore.
 
 
 - IS-CLASS-LIST
@@ -297,7 +297,7 @@ Chiamata da (def-class).
 Sintassi:
 	'(' is-class-list <class-list> ')'
 
-<class-list>	   ・una lista di classi;
+<class-list>	   繝ｻuna lista di classi;
 
 
 - IS-CHILD
@@ -308,8 +308,8 @@ Chiamata da (is-instance) e (control-field)
 Sintassi:
 	'(' is-child <class-child> <class-parent> ')'
 
-<class-child>	   ・una classe;
-<class-parent>	   ・una classe.
+<class-child>	   繝ｻuna classe;
+<class-parent>	   繝ｻuna classe.
 
 
 - FIELD-INSTANCE
@@ -322,13 +322,13 @@ Chiamata da (field) e (field*).
 Sintassi:
 	'(' field-instance <instance> <field-name> ')'
 
-<instance>  	   ・un'istanza;
-<field-name>	   ・il nome di un campo.
+<instance>  	   繝ｻun'istanza;
+<field-name>	   繝ｻil nome di un campo.
 
 
 - FIELD-CHECK
 
-Controlla ricorsivamente se un campo ・presente in una lista di campi,
+Controlla ricorsivamente se un campo 繝ｻpresente in una lista di campi,
 se lo trova, lo rimanda al chiamante.
 Se invece, dopo aver controllato tutta la lista, non lo trova, chiama
 (field-superclass) per controllare le classi genitori.
@@ -337,8 +337,8 @@ Chiamata da (field-instance) e (field-class-location).
 Sintassi:
 	'(' field-check <field-list> <field-name> <parents> ')'
 
-<field-list>	   ・una lista di campi;
-<field-name>	   ・il nome di un campo.
+<field-list>	   繝ｻuna lista di campi;
+<field-name>	   繝ｻil nome di un campo.
 
 
 - FIELD-SUPERCLASS
@@ -352,8 +352,8 @@ Chiamata da (field-check), (field-class-location), (control-field) e
 Sintassi:
 	'(' field-superclass <classes> <field-name> ')'
 
-<classes>   	   ・una lista di classi;
-<field-name>	   ・il nome di un campo.
+<classes>   	   繝ｻuna lista di classi;
+<field-name>	   繝ｻil nome di un campo.
 
 
 - FIELD-CLASS-LOCATION
@@ -367,8 +367,8 @@ Chiamata da (field-superclass).
 Sintassi:
 	'(' field-class-location <class> <field-name> ')'
 
-<class>	    	   ・una classe;
-<field-name>	   ・il nome di un campo.
+<class>	    	   繝ｻuna classe;
+<field-name>	   繝ｻil nome di un campo.
 
 
 - GET-METHOD
@@ -381,13 +381,13 @@ Chiamata dalla funzione lambda creata da (process-method).
 Sintassi:
 	'(' get-method <class> <method-name> ')'
 
-<class>	    	   ・una classe;
-<method-name>	   ・il nome di un metodo.
+<class>	    	   繝ｻuna classe;
+<method-name>	   繝ｻil nome di un metodo.
 
 
 - METHOD-CHECK
 
-Controlla ricorsivamente se un metodo ・presente in una lista di
+Controlla ricorsivamente se un metodo 繝ｻpresente in una lista di
 metodi, se lo trova, lo rimanda al chiamante.
 Se invece, dopo aver controllato tutta la lista, non lo trova, chiama
 (method-superclass) per controllare le classi genitori.
@@ -396,8 +396,8 @@ Chiamata da (method-class-location).
 Sintassi:
 	'(' method-check <method-list> <method-name> <parents> ')'
 
-<method-list>	   ・una lista di metodi;
-<method-name>	   ・il nome di un metodo.
+<method-list>	   繝ｻuna lista di metodi;
+<method-name>	   繝ｻil nome di un metodo.
 
 
 - METHOD-SUPERCLASS
@@ -410,8 +410,8 @@ Chiamata da (method-check) e (method-class-location).
 Sintassi:
 	'(' method-superclass <classes> <method-name>
 
-<classes>   	   ・una lista di classi;
-<method-name>	   ・il nome di un metodo.
+<classes>   	   繝ｻuna lista di classi;
+<method-name>	   繝ｻil nome di un metodo.
 
 
 - METHOD-CLASS-LOCATION
@@ -425,5 +425,5 @@ Chiamata da (get-method) e (method-superclass).
 Sintassi:
 	'(' method-class-location <class> <method-name>
 
-<class>	    	   ・una classe;
-<method-name>	   ・il nome di un metodo.
+<class>	    	   繝ｻuna classe;
+<method-name>	   繝ｻil nome di un metodo.
