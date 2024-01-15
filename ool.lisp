@@ -1,7 +1,6 @@
-;;;; Zheng Lei Maurizio 866251
-;;;;[NEED INFOS]
-;;;;Simone
-;;;;Filo
+;;;;Zheng Lei Maurizio 866251
+;;;;Moretti Simone 894672
+;;;;Marini Filippo 900000
 
 ;;; -*- Mode: Lisp -*-
 
@@ -239,6 +238,7 @@
 
 ;;;raggruppa i fields in coppie chiave valore
 ;;;usato da (make) alla chiamata di (duplicate-parts-check)
+;;;necessario per il corretto funzionamento di (duplicate-parts-check)
 (defun group-fields (fields)
   (cond ((null fields) nil)
         (t (cons (list (car fields) (second fields))
